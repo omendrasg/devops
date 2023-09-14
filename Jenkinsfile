@@ -4,11 +4,11 @@ node {
   }
 
   stage("Compile") {
-    sh "pwd"
-    sh "./mvnw clean install -DskipTests"
+    pwd
+    ./mvnw clean install -DskipTests
   }
 
   stage("Tests") {
-    sh "./mvnw test -Punit"
+    ./mvnw test -Punit
   }
 }
