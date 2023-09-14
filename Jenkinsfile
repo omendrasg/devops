@@ -4,6 +4,7 @@ node {
   }
 
   stage("Compile") {
+    sh "pwd"
     sh "./mvnw clean install -DskipTests"
   }
 
