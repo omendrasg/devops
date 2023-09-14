@@ -1,6 +1,5 @@
 node {
   stage("Clone") {
-    bat 'del /S ./*'
     git branch: 'main', url: 'https://github.com/omendrasg/devops.git'
   }
 
