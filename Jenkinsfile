@@ -4,10 +4,10 @@ node {
   }
 
   stage("Compile") {
-    ./mvnw clean install -DskipTests
+    bat './mvnw clean install -DskipTests'
   }
 
   stage("Tests") {
-    ./mvnw test -Punit
+    bat './mvnw test -Punit'
   }
 }
