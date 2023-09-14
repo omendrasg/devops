@@ -1,13 +1,14 @@
 node {
   stage("Clone") {
+    bat 'del /S ./*'
     git branch: 'main', url: 'https://github.com/omendrasg/devops.git'
   }
 
-  stage("Compile") {
+  stage("Build") {
     bat './mvnw clean install -DskipTests'
   }
 
-  stage("Tests") {
+  stage("Test") {
     bat './mvnw test -Punit'
   }
 }
